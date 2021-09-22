@@ -2,17 +2,20 @@ package main
 
 import (
 	"encoding/json"
+	"fmt"
 	"log"
-	"net/http" // HTTP protocol package
+	"net/http"
 	"time"
 )
 
 func TimeResponseHandler(w http.ResponseWriter, req *http.Request) {
-	test := &Time{Time: time.Now().Format(time.RFC3339)} // get current time with our format
+	test := &Time{Time: time.Now().Format(time.RFC3339)}
 	res, _ := json.Marshal(test)
-	w.Header().Set("content-type", "aplication/json")
-	w.WriteHeader(200)
-	w.Write(res)
+
+	fmt.Fprintf(w, "%s\n", res)
+	//w.Header().Set("content-type", "aplication/json")
+	//w.WriteHeader(200)
+	//w.Write(res)
 }
 
 type Time struct {
