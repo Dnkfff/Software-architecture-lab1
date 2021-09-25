@@ -1,0 +1,11 @@
+module example.com/server
+
+go 1.17
+
+language: go
+
+go:
+- 1.17
+- main
+
+script: go fmt server.go
