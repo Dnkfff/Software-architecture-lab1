@@ -1,4 +1,4 @@
-# Rabotiaga inc
+# Workers inc
 
 ### Team:
 * [ Петрук Петро ](https://github.com/17etro)
